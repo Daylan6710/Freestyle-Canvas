@@ -74,7 +74,17 @@ context.clearRect(0, 0, canvas.width, canvas.height);
   const scale = 120;
   const lineWidthT = 6;
 
-  // --- draw the Letter U ---
+ //draw a new letter U on top of the UT symbol
+ context.strokeStyle = "#0029e2";// dark blue
+ context.linewidth = 5; // thinner line than the original line
+ context.beginPath();
+ context.moveto(120, 139.3);
+ context.lineto(120, 285);
+ context.lineto(240, 285);
+ context.stroke();
+		
+		
+   // --- draw the Letter U ---
   context.strokeStyle = "#BF5700"; // burnt orange
   context.lineWidth = 10;
   context.beginPath();
@@ -94,13 +104,6 @@ context.clearRect(0, 0, canvas.width, canvas.height);
   context.lineTo(cx, cy + scale / 1);
   context.stroke();
   
-//draw a new letter U on top of the UT symbol
- context.strokeStyle = "#f79999";// dark blue
- context.linewidth = 5; // thinner line than the original line
- context.beginPath();
- context.moveto(120, 139.3);
- context.lineto(120, 285);
- context.stroke();	
 	</script>
 		
 	</p>
