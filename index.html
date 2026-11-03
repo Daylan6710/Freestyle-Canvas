@@ -74,53 +74,83 @@ context.clearRect(0, 0, canvas.width, canvas.height);
   const scale = 120;
   const lineWidthT = 6;
 
- //draw a new letter U on top of the UT symbol
-	context.strokeStyle = "#0029e2";// dark blue
- 	context.lineWidth = 5; // thinner line than the original line
- 	context.beginPath();
- 	context.moveTo(120, 139.3);
- 	context.lineTo(120, 285);
- 	context.lineTo(240, 285);
-	context.stroke();
-		
- // --- draw the Letter U ---
- 	context.strokeStyle = "#BF5700"; // burnt orange
- 	context.lineWidth = 10;
- 	context.beginPath();
- 	context.moveTo(cx - scale / 2, cy - scale / 1.4); // left vertical
- 	context.lineTo(cx - scale / 2, cy + scale / 2);   // down
- 	context.lineTo(cx + scale / 2, cy + scale / 2);   // bottom flat
- 	context.lineTo(cx + scale / 2, cy - scale / 1.4); // up
- 	context.stroke();
+ 
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Drawing a Foot</title>
+</head>
+<body>
 
-  // --- draw the T nested inside ---
-  context.beginPath();
-  // top bar of T
-  context.moveTo(cx - scale / 1.2, cy - scale / 4.2);
-  context.lineTo(cx + scale / 1.2, cy - scale / 4.2);
-  // vertical stem of T
-  context.moveTo(cx, cy - scale / 4.2);
-  context.lineTo(cx, cy + scale / 1);
-  context.stroke();
-  
-	
-//	draw a new letter T on top of the UT symbol
-context.strokeStyle = "#0029e2"; // dark blue
-context.lineWidth = 5 //thinner line than the original line
-context.beginPath();			
-context.moveTo(80,196.4);
-context.lineTo(280,196.4);
-context.moveTo(180,196.4);
-context.lineTo(180,345);
-context.stroke(); 
-	
-	</script>		
-  </p>
-</div>
-	
-<footer class="w3-bottom w3-container w3-flat-carrot">
-	<p>DIY!</p>
-</footer>
+<canvas id="myCanvas" width="400" height="450"
+        style="border:1px solid black;">
+</canvas>
+
+<script>
+    var canvas = document.getElementById("myCanvas");
+    var context = canvas.getContext("2d");
+
+    // Set drawing colors
+    context.strokeStyle = "#0029e2"; // dark blue
+    context.fillStyle = "#BF5700";   // burnt orange
+    context.lineWidth = 5;
+
+    // --- Draw the foot ---
+    context.beginPath();
+
+    // Heel
+    context.moveTo(150, 350);
+
+    // Bottom of foot
+    context.quadraticCurveTo(100, 330, 105, 270);
+
+    // Arch
+    context.quadraticCurveTo(115, 230, 145, 210);
+
+    // Top of foot
+    context.quadraticCurveTo(160, 160, 200, 130);
+
+    // Big toe
+    context.quadraticCurveTo(245, 100, 270, 135);
+
+    // Top of toes
+    context.quadraticCurveTo(290, 145, 280, 165);
+    context.quadraticCurveTo(310, 165, 305, 185);
+    context.quadraticCurveTo(325, 190, 310, 210);
+    context.quadraticCurveTo(325, 225, 300, 240);
+
+    // Side of foot
+    context.quadraticCurveTo(285, 270, 260, 290);
+    context.quadraticCurveTo(240, 320, 220, 345);
+
+    // Connect back to heel
+    context.quadraticCurveTo(190, 370, 150, 350);
+
+    context.closePath();
+
+    // Fill and outline the foot
+    context.fill();
+    context.stroke();
+
+    // --- Draw toe details ---
+    context.strokeStyle = "#0029e2";
+    context.lineWidth = 3;
+
+    context.beginPath();
+
+    context.moveTo(270, 165);
+    context.quadraticCurveTo(260, 180, 265, 195);
+
+    context.moveTo(295, 190);
+    context.quadraticCurveTo(280, 205, 285, 220);
+
+    context.moveTo(305, 215);
+    context.quadraticCurveTo(290, 230, 290, 240);
+
+    context.stroke();
+
+</script>
 
 </body>
 </html>
+
